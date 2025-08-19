@@ -1,51 +1,100 @@
-/* Hero title + name */
-.hero-title {
-  font-size: clamp(32px, 6vw, 64px);
-  line-height: 1.1;
-}
-.hero-name { 
-  color: #0d6efd; /* כחול */
+/* ==== רקע כללי + טקסט לבן ==== */
+html, body { 
+  height: 100%; 
 }
 
-/* Tagline מתחת לכותרת */
-.tagline {
-  font-size: clamp(16px, 2.4vw, 22px);
-  letter-spacing: 0.2px;
+body {
+  /* שכבת כהות עדינה + תמונת הרקע שלך (עם שבירת קאש v=2) */
+  background:
+    linear-gradient(rgba(0,0,0,.35), rgba(0,0,0,.35)),
+    url("images/background.jpg?v=2") center/cover fixed no-repeat;
+  color: #fff;     /* כל הטקסט לבן כברירת מחדל */
+  margin: 0;
+}
+
+/* טקסט לבן לכולם, כולל "muted" */
+h1, h2, h3, h4, h5, h6,
+p, span, li, div { color: #fff !important; }
+.text-muted { color: rgba(255,255,255,.8) !important; }
+
+/* קישורים */
+a { color: #add8e6; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ===== Hero ===== */
+.hero-title { 
+  font-size: clamp(32px, 6vw, 64px); 
+  line-height: 1.1; 
+}
+.hero-name  { 
+  color: #e63946 !important; /* ורוד/אדום */
+}
+.tagline    { 
+  font-size: clamp(16px, 2.4vw, 22px); 
+  letter-spacing: .2px; 
+  color:#fff !important; 
 }
 
 /* אנימציה ל- 👋 */
-.wave {
-  display: inline-block;
-  transform-origin: 70% 70%;
-  animation: wave 2.5s ease-in-out infinite;
+.wave { 
+  display:inline-block; 
+  transform-origin:70% 70%; 
+  animation:wave 2.5s ease-in-out infinite; 
 }
 @keyframes wave {
-  0%{transform:rotate(0deg)} 10%{transform:rotate(14deg)}
-  20%{transform:rotate(-8deg)} 30%{transform:rotate(14deg)}
-  40%{transform:rotate(-4deg)} 50%{transform:rotate(10deg)}
-  60%,100%{transform:rotate(0deg)}
+  0%{transform:rotate(0)} 
+  10%{transform:rotate(14deg)}
+  20%{transform:rotate(-8deg)} 
+  30%{transform:rotate(14deg)}
+  40%{transform:rotate(-4deg)} 
+  50%{transform:rotate(10deg)}
+  60%,100%{transform:rotate(0)}
 }
 
-/* גלילה חלקה */
+/* גלילה חלקה + שלא יכנס מתחת ל-navbar כשקופצים לעוגנים */
 html { scroll-behavior: smooth; }
+section { scroll-margin-top: 80px; }
 
-/* עיצוב אייקוני רשתות */
+/* ===== Navbar שקוף + טקסט לבן ===== */
+.navbar,
+.navbar.bg-white,
+#hero {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+.navbar .nav-link { color: #fff !important; }
+.navbar .nav-link:hover { color: #add8e6 !important; text-decoration: underline; }
+
+/* אייקון המבורגר לבן */
+.navbar-toggler { border-color: rgba(255,255,255,.55); }
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='white' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* ===== כפתורים (שייראו טוב על רקע כהה) ===== */
+.btn-primary { 
+  background-color:#0d6efd; 
+  border-color:#0d6efd; 
+}
+.btn-primary:hover { 
+  background-color:#0b5ed7; 
+  border-color:#0a58ca; 
+}
+
+/* ===== אייקוני רשתות ===== */
 .social-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  transition: transform 0.2s ease;
+  display:inline-flex; 
+  align-items:center; 
+  justify-content:center;
+  width:50px; 
+  height:50px; 
+  border-radius:50%;
+  transition:transform .2s ease;
 }
-.social-icon img {
-  width: 25px;
-  height: 25px;
-}
-.social-icon:hover {
-  transform: scale(1.15);
-}
-.linkedin { background-color: #0077b5; }
-.github   { background-color: #24292e; }
-.cv       { background-color: #e63946; }
+.social-icon img { width:25px; height:25px; }
+.social-icon:hover { transform:scale(1.15); }
+
+.linkedin { background-color:#0077b5; }
+.github   { background-color:#24292e; }
+.cv       { background-color:#e63946; }
