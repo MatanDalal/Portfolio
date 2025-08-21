@@ -21,41 +21,8 @@ section { scroll-margin-top: 84px; }
 .section-title{ font-weight: 800; color: var(--heading); }
 
 /* Hero */
-.hero{ min-height: 100vh; display: grid; place-items: center; background: #fff; padding-top: 72px; }
-.hero-title{ font-size: clamp(32px, 6vw, 64px); line-height: 1.1; margin-bottom: .25rem; color: var(--heading); }
-.hero-name{ color: var(--brand); }
-.tagline{ font-size: clamp(16px, 2.4vw, 22px); color: var(--muted); }
+.hero{ min-height: 100vh; display: grid;
 
-/* Social */
-.social-icon{ display:inline-flex; align-items:center; justify-content:center; width:56px; height:56px; border-radius:50%; box-shadow: var(--shadow); transition: transform .2s ease, box-shadow .2s ease; }
-.social-icon img{ width:26px; height:26px; }
-.social-icon:hover{ transform: translateY(-2px) scale(1.06); box-shadow: 0 14px 28px rgba(0,0,0,.12); }
-.linkedin{ background:#0077b5; }
-.github  { background:#24292e; }
-.cv      { background:#e63946; }
-
-/* Skills */
-.skills-grid{ display: grid; grid-template-columns: repeat(12,1fr); gap: 24px; }
-.skill-card{ grid-column: span 12; background: var(--card-bg); border-radius: 16px; padding: 24px 22px; box-shadow: var(--shadow); transition: transform .25s ease, box-shadow .25s ease; }
-.skill-card:hover{ transform: translateY(-4px); box-shadow: 0 14px 28px rgba(0,0,0,.12); }
-.skill-card h5{ font-weight: 700; margin-bottom: 18px; color: var(--heading); }
-
-.skill-icons{ display: flex; flex-wrap: wrap; align-items: center; gap: 18px; }
-.skill-badge{ position: relative; display: inline-flex; align-items: center; justify-content: center; width: 60px; height: 60px; }
-
-/* Hide icon on hover + show label IN PLACE */
-.skill-badge i,
-.skill-badge img{ font-size: 46px; width: 46px; height: 46px; transition: opacity .2s ease, transform .2s ease; }
-.skill-badge .label{ position: absolute; font-size: 13px; font-weight: 600; opacity: 0; transition: opacity .2s ease; }
-
-/* Effect */
-.skill-badge:hover i,
-.skill-badge:hover img{ opacity: 0; transform: scale(0.9); }
-.skill-badge:hover .label{ opacity: 1; }
-
-/* Responsive */
-@media (min-width: 768px){ .skill-card{ grid-column: span 6; } }
-@media (min-width: 1200px){ .skill-card{ grid-column: span 4; } }
 
 
 
