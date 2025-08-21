@@ -1,137 +1,101 @@
-/* ===== Base ===== */
-:root{
-  --heading:#111;
-  --text:#333;
-  --muted:#6c757d;
-  --brand:#0d6efd;
-  --card-bg:#ffffff;
-  --shadow:0 10px 24px rgba(0,0,0,.06);
+body {
+  font-family: 'Segoe UI', sans-serif;
+  scroll-behavior: smooth;
 }
 
-html,body{height:100%}
-body{
-  color:var(--text);
-  margin:0;
-  background:#fff;
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
+.section-title {
+  font-weight: bold;
+  font-size: 2.2rem;
 }
 
-/* ===== NAV ===== */
-.main-nav .nav-pill-row .nav-link{
-  font-size:1.05rem;          /* קצת יותר גדול */
-  padding:0.5rem 1.1rem;      /* קצת יותר מרווח */
-  color:var(--text);
-}
-.main-nav .nav-pill-row .nav-link:hover{ color:var(--brand); }
-
-/* Titles */
-.section-title{
-  font-weight:800;
-  color:var(--heading);
+/* ===== Skills ===== */
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
 }
 
-/* ===== HERO ===== */
-.hero{
-  min-height:100vh;
-  display:grid;
-  place-items:center;
-  background:#fff;
-  padding-top:96px;  /* מקום ל-navbar */
+.skills-box {
+  flex: 1 1 300px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
 }
 
-.hero-title{
-  font-size:clamp(32px,6vw,64px);
-  line-height:1.1;
-  margin-bottom:.25rem;
-  color:var(--heading);
-}
-.hero-name{ color:var(--brand); }
-.tagline{ font-size:clamp(16px,2.4vw,22px); color:var(--muted); }
-
-/* Wave hand */
-.wave{
-  display:inline-block;
-  transform-origin:70% 70%;
-  animation:wave 2.5s ease-in-out infinite;
-}
-@keyframes wave{
-  0%{transform:rotate(0)}10%{transform:rotate(14deg)}
-  20%{transform:rotate(-8deg)}30%{transform:rotate(14deg)}
-  40%{transform:rotate(-4deg)}50%{transform:rotate(10deg)}
-  60%,100%{transform:rotate(0)}
+.skills-icons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 15px;
 }
 
-/* ===== Social icons ===== */
-.social-icon{
-  display:inline-flex;align-items:center;justify-content:center;
-  width:56px;height:56px;border-radius:50%;
-  box-shadow:var(--shadow);
-  transition:transform .2s ease, box-shadow .2s ease;
-}
-.social-icon img{width:26px;height:26px}
-.social-icon:hover{transform:translateY(-2px) scale(1.06);box-shadow:0 14px 28px rgba(0,0,0,.12)}
-.linkedin{background:#0077b5}.github{background:#24292e}.cv{background:#e63946}
-
-/* ===== SKILLS ===== */
-.skills-grid{
-  display:grid;
-  grid-template-columns:repeat(12,1fr);
-  gap:24px;
-}
-.skill-card{
-  grid-column:span 12;
-  background:var(--card-bg);
-  border-radius:16px;
-  padding:24px 22px;
-  box-shadow:var(--shadow);
-  transition:transform .25s ease, box-shadow .25s ease;
-}
-.skill-card:hover{ transform:translateY(-4px); box-shadow:0 14px 28px rgba(0,0,0,.12) }
-.skill-card h5{ font-weight:700; margin-bottom:18px; color:var(--heading); }
-
-/* שורת האייקונים */
-.skill-icons{
-  display:flex;flex-wrap:wrap;align-items:center;gap:22px;
+.skills-icons img {
+  width: 50px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
-/* עטיפה לכל אייקון – מאפשרת החלפה לטקסט */
-.skill-badge{
-  position:relative;
-  width:64px;height:64px;
-  display:grid;place-items:center;
-}
-.skill-badge i{
-  font-size:46px;line-height:1;filter:saturate(1.05);
-  transition:transform .18s ease, opacity .18s ease, filter .18s ease;
-}
-.skill-badge img{
-  width:48px;height:48px;object-fit:contain;
-  transition:transform .18s ease, opacity .18s ease, filter .18s ease;
+.skills-icons img:hover {
+  transform: scale(1.1);
+  opacity: 0.85;
 }
 
-/* הטקסט שמופיע בהובר */
-.skill-badge .label{
-  position:absolute;inset:0;
-  display:grid;place-items:center;
-  font-weight:700;letter-spacing:.3px;
-  color:var(--heading);
-  opacity:0;transform:scale(.75);
-  transition:transform .18s ease, opacity .18s ease;
+/* ===== Projects ===== */
+.project-card {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 20px;
+  height: 100%;
+  transition: transform 0.2s ease;
 }
 
-/* אפקט hover – האייקון נעלם והשם מופיע */
-.skill-badge:hover i,
-.skill-badge:hover img{ transform:scale(.2) rotate(-6deg); opacity:0; filter:saturate(1.25); }
-.skill-badge:hover .label{ opacity:1; transform:scale(1) }
+.project-card:hover {
+  transform: translateY(-5px);
+}
 
-/* Responsive: 3 קלפים בשורה במסך גדול */
-@media (min-width:768px){  .skill-card{grid-column:span 6} }
-@media (min-width:1200px){ .skill-card{grid-column:span 4} }
+/* ===== Contact quick row ===== */
+.contact-quick {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
 
-/* Smooth anchor scrolling */
-html{scroll-behavior:smooth}
-section{scroll-margin-top:96px}
+.contact-quick .divider {
+  color: #6c757d;
+  opacity: 0.7;
+}
+
+.contact-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: #0d6efd;
+  font-weight: 600;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.contact-item:hover {
+  transform: translateY(-1px);
+  opacity: 0.9;
+}
+
+.contact-item .icon {
+  font-size: 20px;
+  line-height: 1;
+}
+
+@media (max-width: 480px) {
+  .contact-quick {
+    gap: 8px;
+  }
+}
+
 
 
 
