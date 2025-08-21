@@ -19,9 +19,23 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Links + Nav */
-.navbar .nav-link { color: var(--text); }
+/* ===== Navbar ===== */
+.navbar .nav-link { 
+  color: var(--text);
+  font-size: 1.1rem;        /* טיפה גדול יותר */
+  padding: .5rem 0;
+  transition: color .2s ease;
+}
 .navbar .nav-link:hover { color: var(--brand); }
+
+/* spacing בין הפריטים עצמם */
+.main-nav {
+  gap: 34px;
+}
+@media (max-width: 991.98px) {
+  .main-nav { gap: 16px; }
+  .navbar .nav-link { font-size: 1.05rem; }
+}
 
 /* Section titles */
 .section-title{
@@ -146,4 +160,5 @@ body {
 /* Smooth anchor scrolling */
 html { scroll-behavior: smooth; }
 section { scroll-margin-top: 84px; }
+
 
