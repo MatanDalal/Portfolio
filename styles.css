@@ -111,8 +111,8 @@ section { scroll-margin-top: 84px; }
 /* ====== ICON SWAP ====== */
 .icon-swap{
   position: relative;
-  width: 64px;   /* ⬅ הגדלתי */
-  height: 64px;  /* ⬅ הגדלתי */
+  width: 90px;   /* ⬅️ גודל המסגרת */
+  height: 90px;
   display: grid;
   place-items: center;
   border: 0;
@@ -123,8 +123,8 @@ section { scroll-margin-top: 84px; }
 
 .icon-swap i,
 .icon-swap svg{
-  width: 64px;   /* ⬅ כולם אותו גודל */
-  height: 64px;
+  width: 90px;   /* ⬅️ גודל האייקון בפועל */
+  height: 90px;
   line-height: 1;
   transition: transform .18s ease, opacity .18s ease, filter .18s ease;
   filter: saturate(1.05);
@@ -136,7 +136,7 @@ section { scroll-margin-top: 84px; }
   display: grid;
   place-items: center;
   font-weight: 800;
-  font-size: 14px;
+  font-size: 16px;
   color: var(--heading);
   letter-spacing: .2px;
   opacity: 0;
@@ -144,17 +144,6 @@ section { scroll-margin-top: 84px; }
   transition: opacity .18s ease, transform .18s ease;
   text-align: center;
   padding: 2px;
-}
-
-.icon-swap:hover i,
-.icon-swap:hover svg{
-  opacity: 0;
-  transform: scale(.82);
-  filter: saturate(1.25);
-}
-.icon-swap:hover .swap-text{
-  opacity: 1;
-  transform: scale(1);
 }
 
 .cs-svg{ shape-rendering: geometricPrecision; }
