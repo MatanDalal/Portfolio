@@ -1,99 +1,169 @@
+/* ===== Base ===== */
+:root{
+  --heading: #111;
+  --text: #333;
+  --muted: #6c757d;
+  --brand: #0d6efd;
+  --card-bg: #ffffff;
+  --chip-bg: #f4f6f8;
+  --chip-text: #222;
+  --shadow: 0 10px 24px rgba(0,0,0,.06);
+}
+
+html, body { height: 100%; }
 body {
-  font-family: 'Segoe UI', sans-serif;
-  scroll-behavior: smooth;
+  color: var(--text);
+  margin: 0;
+  background: #fff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.section-title {
-  font-weight: bold;
-  font-size: 2.2rem;
+/* Nav links – קצת יותר גדולים ומרווחים */
+.main-nav .nav-link{
+  padding: 0.75rem 1.25rem;
+  font-size: 1.05rem;
+}
+.main-nav .nav-link:hover{ color: var(--brand); }
+
+/* Smooth anchor scrolling */
+html { scroll-behavior: smooth; }
+section { scroll-margin-top: 84px; }
+
+/* Section titles */
+.section-title{
+  font-weight: 800;
+  color: var(--heading);
 }
 
-/* ===== Skills ===== */
-.skills-grid {
+/* ===== HERO ===== */
+.hero{
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: #fff;
+  padding-top: 72px; /* room for fixed navbar */
+}
+.hero-title{
+  font-size: clamp(32px, 6vw, 64px);
+  line-height: 1.1;
+  margin-bottom: .25rem;
+  color: var(--heading);
+}
+.hero-name{ color: var(--brand); }
+.tagline{ font-size: clamp(16px, 2.4vw, 22px); color: var(--muted); }
+
+/* Wave hand */
+.wave{
+  display: inline-block;
+  transform-origin: 70% 70%;
+  animation: wave 2.5s ease-in-out infinite;
+}
+@keyframes wave {
+  0%{transform:rotate(0)} 10%{transform:rotate(14deg)}
+  20%{transform:rotate(-8deg)} 30%{transform:rotate(14deg)}
+  40%{transform:rotate(-4deg)} 50%{transform:rotate(10deg)}
+  60%,100%{transform:rotate(0)}
+}
+
+/* ===== Social icons ===== */
+.social-icon{
+  display:inline-flex; align-items:center; justify-content:center;
+  width:56px; height:56px; border-radius:50%;
+  box-shadow: var(--shadow);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.social-icon img{ width:26px; height:26px; }
+.social-icon:hover{ transform: translateY(-2px) scale(1.06); box-shadow: 0 14px 28px rgba(0,0,0,.12); }
+.linkedin{ background:#0077b5; }
+.github  { background:#24292e; }
+.cv      { background:#e63946; }
+
+/* ===== SKILLS ===== */
+.skills-grid{
+  display: grid;
+  grid-template-columns: repeat(12,1fr);
+  gap: 24px;
+}
+.skill-card{
+  grid-column: span 12;
+  background: var(--card-bg);
+  border-radius: 16px;
+  padding: 24px 22px;
+  box-shadow: var(--shadow);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.skill-card:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 14px 28px rgba(0,0,0,.12);
+}
+.skill-card h5{
+  font-weight: 700;
+  margin-bottom: 18px;
+  color: var(--heading);
+}
+
+/* icons row */
+.skill-icons{
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-}
-
-.skills-box {
-  flex: 1 1 300px;
-  background: #f8f9fa;
-  border-radius: 8px;
-  padding: 20px;
-  text-align: center;
-}
-
-.skills-icons {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 15px;
-  margin-top: 15px;
-}
-
-.skills-icons img {
-  width: 50px;
-  transition: transform 0.2s ease, opacity 0.2s ease;
-}
-
-.skills-icons img:hover {
-  transform: scale(1.1);
-  opacity: 0.85;
-}
-
-/* ===== Projects ===== */
-.project-card {
-  background: #f8f9fa;
-  border-radius: 8px;
-  padding: 20px;
-  height: 100%;
-  transition: transform 0.2s ease;
-}
-
-.project-card:hover {
-  transform: translateY(-5px);
-}
-
-/* ===== Contact quick row ===== */
-.contact-quick {
-  display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 12px;
-  margin-bottom: 16px;
-  flex-wrap: wrap;
+  gap: 18px;
 }
 
-.contact-quick .divider {
-  color: #6c757d;
-  opacity: 0.7;
-}
-
-.contact-item {
+/* “badge” עם טקסט שמופיע בהובר */
+.skill-badge{
+  position: relative;
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  text-decoration: none;
-  color: #0d6efd;
-  font-weight: 600;
-  transition: transform 0.15s ease, opacity 0.15s ease;
+  justify-content: center;
 }
-
-.contact-item:hover {
-  transform: translateY(-1px);
-  opacity: 0.9;
-}
-
-.contact-item .icon {
-  font-size: 20px;
+.skill-badge i,
+.skill-badge img{
+  font-size: 46px;
   line-height: 1;
+  height: 46px;
+  width: 46px;
+  transition: transform .2s ease, filter .2s ease;
+  filter: saturate(1.05);
+}
+.skill-badge:hover i,
+.skill-badge:hover img{
+  transform: scale(1.12) rotate(2deg);
+  filter: saturate(1.25);
+}
+.skill-badge .label{
+  position: absolute;
+  bottom: -28px;
+  white-space: nowrap;
+  background: #000;
+  color: #fff;
+  font-size: 12px;
+  padding: 3px 8px;
+  border-radius: 6px;
+  opacity: 0;
+  transform: translateY(4px);
+  pointer-events: none;
+  transition: opacity .15s ease, transform .15s ease;
+}
+.skill-badge:hover .label{
+  opacity: 1;
+  transform: translateY(0);
 }
 
-@media (max-width: 480px) {
-  .contact-quick {
-    gap: 8px;
-  }
+/* responsive columns */
+@media (min-width: 768px){
+  .skill-card{ grid-column: span 6; }
+}
+@media (min-width: 1200px){
+  .skill-card{ grid-column: span 4; } /* שלוש/ארבע כרטיסים בשורה בהתאם לרוחב */
+}
+
+/* Contact form tweak */
+.contact-form .form-control{
+  padding-top: .7rem;
+  padding-bottom: .7rem;
+  font-size: 1rem;
 }
 
 
