@@ -1,4 +1,4 @@
-https://matandalal.github.io/Portfolio/?#about/* ===== Base ===== */
+/* ===== Base ===== */
 :root{
   --heading: #111;
   --text: #333;
@@ -111,8 +111,8 @@ section { scroll-margin-top: 84px; }
 /* ====== ICON SWAP ====== */
 .icon-swap{
   position: relative;
-  width: 80px;   /* ⬅ הגדלתי את הקובייה (היה 64px) */
-  height: 80px;  /* ⬅ הגדלתי את הקובייה (היה 64px) */
+  width: 80px;
+  height: 80px;
   display: grid;
   place-items: center;
   border: 0;
@@ -123,7 +123,7 @@ section { scroll-margin-top: 84px; }
 
 .icon-swap i,
 .icon-swap svg{
-  width: 80px;   /* ⬅ האייקונים עצמם עכשיו גדולים יותר */
+  width: 80px;
   height: 80px;
   line-height: 1;
   transition: transform .18s ease, opacity .18s ease, filter .18s ease;
@@ -136,7 +136,7 @@ section { scroll-margin-top: 84px; }
   display: grid;
   place-items: center;
   font-weight: 800;
-  font-size: 16px;  /* ⬅ הגדלתי קצת את הטקסט בפנים */
+  font-size: 16px;
   color: var(--heading);
   letter-spacing: .2px;
   opacity: 0;
@@ -144,6 +144,16 @@ section { scroll-margin-top: 84px; }
   transition: opacity .18s ease, transform .18s ease;
   text-align: center;
   padding: 2px;
+}
+
+.icon-swap:hover i,
+.icon-swap:hover svg{
+  opacity: 0;
+  transform: scale(.9);
+}
+.icon-swap:hover .swap-text{
+  opacity: 1;
+  transform: scale(1);
 }
 
 .cs-svg{ shape-rendering: geometricPrecision; }
@@ -161,6 +171,7 @@ section { scroll-margin-top: 84px; }
   padding-bottom: .7rem;
   font-size: 1rem;
 }
+
 
 
 
