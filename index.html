@@ -7,12 +7,13 @@
 
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Devicon (icons for tech logos) -->
+  <!-- Devicon (tech logos) -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+  <!-- Bootstrap Icons (ל‑Foundations) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 
   <!-- Our CSS (cache-bust) -->
-  <link rel="stylesheet" href="styles.css?v=5" />
+  <link rel="stylesheet" href="styles.css?v=7" />
 </head>
 <body>
   <!-- Navbar -->
@@ -79,7 +80,7 @@
     </div>
   </section>
 
-  <!-- Skills (NEW) -->
+  <!-- Skills -->
   <section id="skills" class="container py-5">
     <h2 class="section-title text-center mb-5">Skills</h2>
 
@@ -88,12 +89,12 @@
       <article class="skill-card">
         <h5>Languages &amp; Technologies</h5>
         <div class="skill-icons">
-          <i title="C" class="devicon-c-plain colored"></i>
-          <i title="C++" class="devicon-cplusplus-plain colored"></i>
-          <i title="Python" class="devicon-python-plain colored"></i>
-          <i title="HTML5" class="devicon-html5-plain colored"></i>
-          <i title="CSS3" class="devicon-css3-plain colored"></i>
-          <i title="JavaScript" class="devicon-javascript-plain colored"></i>
+          <span class="icon-swap" data-label="C"><i class="devicon-c-plain colored"></i></span>
+          <span class="icon-swap" data-label="C++"><i class="devicon-cplusplus-plain colored"></i></span>
+          <span class="icon-swap" data-label="Python"><i class="devicon-python-plain colored"></i></span>
+          <span class="icon-swap" data-label="HTML5"><i class="devicon-html5-plain colored"></i></span>
+          <span class="icon-swap" data-label="CSS3"><i class="devicon-css3-plain colored"></i></span>
+          <span class="icon-swap" data-label="JavaScript"><i class="devicon-javascript-plain colored"></i></span>
         </div>
       </article>
 
@@ -101,12 +102,12 @@
       <article class="skill-card">
         <h5>Tools &amp; Platforms</h5>
         <div class="skill-icons">
-          <i title="Git" class="devicon-git-plain colored"></i>
-          <i title="GitHub" class="devicon-github-original"></i>
-          <i title="Linux" class="devicon-linux-plain"></i>
-          <i title="Bootstrap" class="devicon-bootstrap-plain colored"></i>
-          <i title="Node.js" class="devicon-nodejs-plain colored"></i>
-          <i title="VS Code" class="devicon-vscode-plain colored"></i>
+          <span class="icon-swap" data-label="Git"><i class="devicon-git-plain colored"></i></span>
+          <span class="icon-swap" data-label="GitHub"><i class="devicon-github-original"></i></span>
+          <span class="icon-swap" data-label="Linux"><i class="devicon-linux-plain"></i></span>
+          <span class="icon-swap" data-label="Bootstrap"><i class="devicon-bootstrap-plain colored"></i></span>
+          <span class="icon-swap" data-label="Node.js"><i class="devicon-nodejs-plain colored"></i></span>
+          <span class="icon-swap" data-label="VS Code"><i class="devicon-vscode-plain colored"></i></span>
         </div>
       </article>
 
@@ -114,22 +115,22 @@
       <article class="skill-card">
         <h5>Databases &amp; Cloud</h5>
         <div class="skill-icons">
-          <i title="MySQL" class="devicon-mysql-plain colored"></i>
-          <i title="PostgreSQL" class="devicon-postgresql-plain colored"></i>
-          <i title="Firebase" class="devicon-firebase-plain colored"></i>
-          <i title="Google Cloud" class="devicon-googlecloud-plain colored"></i>
+          <span class="icon-swap" data-label="MySQL"><i class="devicon-mysql-plain colored"></i></span>
+          <span class="icon-swap" data-label="PostgreSQL"><i class="devicon-postgresql-plain colored"></i></span>
+          <span class="icon-swap" data-label="Firebase"><i class="devicon-firebase-plain colored"></i></span>
+          <span class="icon-swap" data-label="Google Cloud"><i class="devicon-googlecloud-plain colored"></i></span>
         </div>
       </article>
 
-      <!-- 4: Computer Science Foundations -->
+      <!-- 4: CS Foundations (with icons too) -->
       <article class="skill-card">
         <h5>Computer Science Foundations</h5>
-        <div class="badge-row">
-          <span class="badge-chip">Data Structures</span>
-          <span class="badge-chip">Algorithms</span>
-          <span class="badge-chip">HTTP</span>
-          <span class="badge-chip">OOP</span>
-          <span class="badge-chip">Networking Basics</span>
+        <div class="skill-icons">
+          <span class="icon-swap" data-label="Data Structures"><i class="bi bi-diagram-3"></i></span>
+          <span class="icon-swap" data-label="Algorithms"><i class="bi bi-bezier"></i></span>
+          <span class="icon-swap" data-label="HTTP"><i class="bi bi-globe2"></i></span>
+          <span class="icon-swap" data-label="OOP"><i class="bi bi-braces-asterisk"></i></span>
+          <span class="icon-swap" data-label="Networking"><i class="bi bi-hdd-network"></i></span>
         </div>
       </article>
     </div>
