@@ -1,38 +1,33 @@
-/* ===== Design Tokens ===== */
+/* ===== Base ===== */
 :root{
-  --heading: #111;
-  --text: #333;
-  --muted: #6c757d;
-  --brand: #0d6efd;
-
-  --card-bg: #fff;
-  --tile-bg: #fff;
-  --tile-shadow: 0 8px 18px rgba(0,0,0,.06);
-
-  --chip-bg: #f4f6f8;
-  --chip-text: #222;
-
-  --shadow-lg: 0 16px 30px rgba(0,0,0,.10);
+  --heading:#111;
+  --text:#333;
+  --muted:#6c757d;
+  --brand:#0d6efd;
+  --card-bg:#fff;
+  --chip-bg:#f4f6f8;
+  --chip-text:#222;
+  --shadow:0 10px 24px rgba(0,0,0,.06);
 }
 
-html, body { height: 100%; }
+html,body{height:100%}
 body{
-  margin:0;
   color:var(--text);
+  margin:0;
   background:#fff;
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
 }
 
-/* ===== Navbar ===== */
-.main-nav .nav-link{
-  font-size: 1.12rem;          /* קצת יותר גדול */
-  padding: .75rem 1.05rem;     /* ריווח טיפה גדול יותר */
-  color: var(--text);
+/* ===== Top navbar ===== */
+.topnav .nav-link{
+  font-size:1.05rem;           /* טיפה יותר גדול */
+  padding:0.35rem 1.1rem;      /* ומרווח בין המילים */
+  color:var(--text);
 }
-.main-nav .nav-link:hover{ color: var(--brand); }
+.topnav .nav-link:hover{ color:var(--brand); }
 
-/* ===== Titles ===== */
+/* ===== Section titles ===== */
 .section-title{
   font-weight:800;
   color:var(--heading);
@@ -44,131 +39,108 @@ body{
   display:grid;
   place-items:center;
   background:#fff;
-  padding-top:72px; /* מקום ל-navbar */
+  padding-top:72px; /* room for fixed navbar */
 }
 .hero-title{
-  font-size: clamp(32px, 6vw, 64px);
+  font-size:clamp(32px,6vw,64px);
   line-height:1.1;
   margin-bottom:.25rem;
   color:var(--heading);
 }
 .hero-name{ color:var(--brand); }
-.tagline{
-  font-size: clamp(16px, 2.4vw, 22px);
-  color: var(--muted);
-}
+.tagline{ font-size:clamp(16px,2.4vw,22px); color:var(--muted); }
 
-/* Wave hand */
+/* Wave */
 .wave{
   display:inline-block;
   transform-origin:70% 70%;
   animation:wave 2.5s ease-in-out infinite;
 }
 @keyframes wave{
-  0%{transform:rotate(0)} 10%{transform:rotate(14deg)}
-  20%{transform:rotate(-8deg)} 30%{transform:rotate(14deg)}
-  40%{transform:rotate(-4deg)} 50%{transform:rotate(10deg)}
+  0%{transform:rotate(0)}10%{transform:rotate(14deg)}
+  20%{transform:rotate(-8deg)}30%{transform:rotate(14deg)}
+  40%{transform:rotate(-4deg)}50%{transform:rotate(10deg)}
   60%,100%{transform:rotate(0)}
 }
 
 /* ===== Social icons ===== */
 .social-icon{
-  display:inline-flex; align-items:center; justify-content:center;
-  width:60px; height:60px; border-radius:50%;
-  background:#eee;
-  box-shadow: var(--shadow-lg);
-  transition: transform .2s ease, box-shadow .2s ease;
+  display:inline-flex;align-items:center;justify-content:center;
+  width:56px;height:56px;border-radius:50%;
+  box-shadow:var(--shadow);
+  transition:transform .2s ease, box-shadow .2s ease;
 }
-.social-icon img{ width:26px; height:26px; }
-.social-icon:hover{ transform: translateY(-2px) scale(1.06); }
-.linkedin{ background:#0077b5; }
-.github  { background:#24292e; }
-.cv      { background:#e63946; }
+.social-icon img{width:26px;height:26px}
+.social-icon:hover{transform:translateY(-2px) scale(1.06);box-shadow:0 14px 28px rgba(0,0,0,.12)}
+.linkedin{background:#0077b5}.github{background:#24292e}.cv{background:#e63946}
 
-/* ===== Skills layout ===== */
+/* ===== SKILLS ===== */
 .skills-grid{
   display:grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap:26px;
+  grid-template-columns:repeat(12,1fr);
+  gap:24px;
 }
 .skill-card{
-  grid-column: span 12;
-  background: var(--card-bg);
-  border-radius: 18px;
-  padding: 22px 22px 18px;
-  box-shadow: var(--tile-shadow);
+  grid-column:span 12;
+  background:var(--card-bg);
+  border-radius:16px;
+  padding:24px 22px;
+  box-shadow:var(--shadow);
+  transition:transform .25s ease, box-shadow .25s ease;
 }
-.skill-card h5{
+.skill-card:hover{ transform:translateY(-4px); box-shadow:0 14px 28px rgba(0,0,0,.12); }
+.skill-card h5{ font-weight:700; margin-bottom:18px; color:var(--heading); }
+
+/* icons row + "icon -> name" hover swap */
+.skill-icons{ display:flex; flex-wrap:wrap; align-items:center; gap:22px; }
+
+.skill-badge{
+  position:relative;
+  width:58px; height:58px;            /* קופסה שווה לכל האייטמים */
+  display:grid; place-items:center;
+}
+.skill-badge i{
+  font-size:48px; line-height:1;      /* devicon size */
+  transition:transform .18s ease, opacity .18s ease, filter .18s ease;
+  filter:saturate(1.05);
+}
+.skill-badge .label{
+  position:absolute; inset:0;
+  display:grid; place-items:center;
   font-weight:700;
-  margin-bottom:16px;
-  color: var(--heading);
-}
-
-/* Icon grid (רוחב, מסודר, נושם) */
-.icon-grid{
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(78px, 1fr));
-  gap: 16px 18px;
-}
-
-/* Icon tile + tooltip */
-.icon-tile{
-  position: relative;
-  display: grid;
-  place-items: center;
-  height: 78px;
-  border-radius: 14px;
-  background: var(--tile-bg);
-  box-shadow: var(--tile-shadow);
-  transition: transform .18s ease, box-shadow .18s ease, filter .18s ease;
-}
-.icon-tile i{
-  font-size: 42px;     /* גודל האייקון */
-  line-height: 1;
-}
-.icon-tile.emoji{
-  font-size: 30px;     /* אמוג'י */
-}
-
-/* Tooltip */
-.icon-tile::after{
-  content: attr(data-label);
-  position: absolute;
-  bottom: -34px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #111;
-  color:#fff;
-  font-size: .78rem;
-  font-weight:600;
+  font-size:.95rem;
+  color:#111;
+  background:#fff;
+  border-radius:12px;
+  box-shadow:0 6px 16px rgba(0,0,0,.08);
   padding:6px 8px;
-  border-radius: 6px;
-  opacity:0;
-  pointer-events:none;
-  white-space: nowrap;
-  transition: opacity .18s ease, transform .18s ease;
-}
-.icon-tile:hover{
-  transform: translateY(-3px) scale(1.035);
-  box-shadow: var(--shadow-lg);
-  filter: saturate(1.15);
-}
-.icon-tile:hover::after{
-  opacity:1;
-  transform: translateX(-50%) translateY(-2px);
+  opacity:0; transform:scale(.7);
+  transition:transform .18s ease, opacity .18s ease;
 }
 
-/* Responsive columns for cards */
-@media (min-width: 768px){
-  .skill-card{ grid-column: span 6; }
-}
-@media (min-width: 1200px){
-  .skill-card{ grid-column: span 4; }
+/* האפקט: על Hover האייקון נעלם והשם מופיע */
+.skill-badge:hover i{ transform:scale(0.2) rotate(-6deg); opacity:0; filter:saturate(1.25); }
+.skill-badge:hover .label{ opacity:1; transform:scale(1); }
+
+/* badges row */
+.badge-row{ display:flex; flex-wrap:wrap; gap:10px; }
+.badge-chip{
+  background:var(--chip-bg);
+  color:var(--chip-text);
+  font-weight:600;
+  padding:8px 12px;
+  border-radius:999px;
+  box-shadow:0 2px 4px rgba(0,0,0,.04);
 }
 
-/* Smooth scroll + offset לעוגנים */
+/* responsive columns */
+@media (min-width:768px){ .skill-card{ grid-column:span 6; } }
+@media (min-width:1200px){ .skill-card{ grid-column:span 4; } }
+
+/* Smooth anchor scrolling */
 html{ scroll-behavior:smooth; }
-section{ scroll-margin-top: 88px; }
+section{ scroll-margin-top:84px; }
+
 
 
 
