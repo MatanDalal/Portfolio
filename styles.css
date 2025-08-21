@@ -1,26 +1,31 @@
-/* רקע כללי לבן + טקסט שחור */
-body {
-  background-color: #ffffff;
-  color: #212529;
+/* ==== רקע כללי ==== */
+html, body { 
+  height: 100%; 
   margin: 0;
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: #fff;   /* רקע לבן */
+  color: #000;        /* טקסט שחור */
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-/* טקסט */
-h1, h2, h3, h4, h5, h6 { color: #000; }
-p, span, li, div       { color: #333; }
-.text-muted            { color: #6c757d !important; }
-
-/* Hero */
-.hero-title { font-size: clamp(32px, 6vw, 64px); line-height: 1.1; }
-.hero-name  { color: #0d6efd; }
-.tagline    { font-size: clamp(16px, 2.4vw, 22px); letter-spacing: .2px; color: #555; }
+/* ===== Hero ===== */
+.hero-title { 
+  font-size: clamp(32px, 6vw, 64px); 
+  line-height: 1.1; 
+}
+.hero-name  { 
+  color: #0d6efd; /* כחול */
+}
+.tagline    { 
+  font-size: clamp(16px, 2.4vw, 22px); 
+  letter-spacing: .2px; 
+  color:#555; 
+}
 
 /* אנימציה ל- 👋 */
-.wave {
+.wave { 
   display:inline-block; 
   transform-origin:70% 70%; 
-  animation:wave 2.5s ease-in-out infinite;
+  animation:wave 2.5s ease-in-out infinite; 
 }
 @keyframes wave {
   0%{transform:rotate(0)} 
@@ -32,20 +37,54 @@ p, span, li, div       { color: #333; }
   60%,100%{transform:rotate(0)}
 }
 
-/* Navbar */
-.navbar .nav-link { color: #000 !important; font-weight: 500; }
+/* גלילה חלקה */
+html { scroll-behavior: smooth; }
+section { scroll-margin-top: 80px; }
+
+/* ===== Navbar ===== */
+.navbar,
+.navbar.bg-white,
+#hero {
+  background: #fff !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+.navbar .nav-link { color: #000 !important; }
 .navbar .nav-link:hover { color: #0d6efd !important; text-decoration: underline; }
 
-/* כפתורים */
-.btn-primary { background-color:#0d6efd; border-color:#0d6efd; }
-.btn-primary:hover { background-color:#0b5ed7; border-color:#0a58ca; }
+/* אייקון המבורגר */
+.navbar-toggler { border-color: rgba(0,0,0,.3); }
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='black' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
 
-/* אייקוני רשתות */
+/* ===== כפתורים ===== */
+.btn-primary { 
+  background-color:#0d6efd; 
+  border-color:#0d6efd; 
+}
+.btn-primary:hover { 
+  background-color:#0b5ed7; 
+  border-color:#0a58ca; 
+}
+
+/* ===== About Me ===== */
+#about p {
+  font-size: 1.3rem;   /* טקסט מוגדל */
+  line-height: 1.7;
+}
+#about h2 {
+  font-size: 2.2rem;   /* כותרת About Me גדולה יותר */
+}
+
+/* ===== אייקוני רשתות ===== */
 .social-icon {
   display:inline-flex; 
   align-items:center; 
   justify-content:center;
-  width:50px; height:50px; border-radius:50%;
+  width:50px; 
+  height:50px; 
+  border-radius:50%;
   transition:transform .2s ease;
 }
 .social-icon img { width:25px; height:25px; }
@@ -54,4 +93,3 @@ p, span, li, div       { color: #333; }
 .linkedin { background-color:#0077b5; }
 .github   { background-color:#24292e; }
 .cv       { background-color:#e63946; }
-
