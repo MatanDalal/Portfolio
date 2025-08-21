@@ -1,57 +1,58 @@
-/* ===== Base ===== */
+/* ===== Design Tokens ===== */
 :root{
   --heading: #111;
   --text: #333;
   --muted: #6c757d;
   --brand: #0d6efd;
-  --card-bg: #ffffff;
+
+  --card-bg: #fff;
+  --tile-bg: #fff;
+  --tile-shadow: 0 8px 18px rgba(0,0,0,.06);
+
   --chip-bg: #f4f6f8;
   --chip-text: #222;
-  --shadow: 0 10px 24px rgba(0,0,0,.06);
+
+  --shadow-lg: 0 16px 30px rgba(0,0,0,.10);
 }
 
 html, body { height: 100%; }
-body {
+body{
+  margin:0;
+  color:var(--text);
+  background:#fff;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* ===== Navbar ===== */
+.main-nav .nav-link{
+  font-size: 1.12rem;          /* קצת יותר גדול */
+  padding: .75rem 1.05rem;     /* ריווח טיפה גדול יותר */
   color: var(--text);
-  margin: 0;
-  background: #fff;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
+.main-nav .nav-link:hover{ color: var(--brand); }
 
-/* ===== NAVBAR ===== */
-.navbar .nav-link { 
-  color: var(--text); 
-  font-size: 1.15rem;   /* כתב טיפה יותר גדול */
-  margin: 0 12px;       /* יותר ריווח בין הלינקים */
-  font-weight: 500;
-}
-.navbar .nav-link:hover { color: var(--brand); }
-
-/* Section titles */
+/* ===== Titles ===== */
 .section-title{
-  font-weight: 800;
-  color: var(--heading);
+  font-weight:800;
+  color:var(--heading);
 }
 
 /* ===== HERO ===== */
 .hero{
-  min-height: 100vh;
-  display: grid;
-  place-items: center;
-  background: #fff;
-  padding-top: 72px; /* room for fixed navbar */
+  min-height:100vh;
+  display:grid;
+  place-items:center;
+  background:#fff;
+  padding-top:72px; /* מקום ל-navbar */
 }
-
 .hero-title{
   font-size: clamp(32px, 6vw, 64px);
-  line-height: 1.1;
-  margin-bottom: .25rem;
-  color: var(--heading);
+  line-height:1.1;
+  margin-bottom:.25rem;
+  color:var(--heading);
 }
-.hero-name{
-  color: var(--brand);
-}
+.hero-name{ color:var(--brand); }
 .tagline{
   font-size: clamp(16px, 2.4vw, 22px);
   color: var(--muted);
@@ -59,11 +60,11 @@ body {
 
 /* Wave hand */
 .wave{
-  display: inline-block;
-  transform-origin: 70% 70%;
-  animation: wave 2.5s ease-in-out infinite;
+  display:inline-block;
+  transform-origin:70% 70%;
+  animation:wave 2.5s ease-in-out infinite;
 }
-@keyframes wave {
+@keyframes wave{
   0%{transform:rotate(0)} 10%{transform:rotate(14deg)}
   20%{transform:rotate(-8deg)} 30%{transform:rotate(14deg)}
   40%{transform:rotate(-4deg)} 50%{transform:rotate(10deg)}
@@ -73,110 +74,101 @@ body {
 /* ===== Social icons ===== */
 .social-icon{
   display:inline-flex; align-items:center; justify-content:center;
-  width:56px; height:56px; border-radius:50%;
-  box-shadow: var(--shadow);
+  width:60px; height:60px; border-radius:50%;
+  background:#eee;
+  box-shadow: var(--shadow-lg);
   transition: transform .2s ease, box-shadow .2s ease;
 }
 .social-icon img{ width:26px; height:26px; }
-.social-icon:hover{ transform: translateY(-2px) scale(1.06); box-shadow: 0 14px 28px rgba(0,0,0,.12); }
+.social-icon:hover{ transform: translateY(-2px) scale(1.06); }
 .linkedin{ background:#0077b5; }
 .github  { background:#24292e; }
 .cv      { background:#e63946; }
 
-/* ===== SKILLS ===== */
+/* ===== Skills layout ===== */
 .skills-grid{
-  display: grid;
-  grid-template-columns: repeat(12,1fr);
-  gap: 24px;
+  display:grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap:26px;
 }
 .skill-card{
   grid-column: span 12;
   background: var(--card-bg);
-  border-radius: 16px;
-  padding: 24px 22px;
-  box-shadow: var(--shadow);
-  transition: transform .25s ease, box-shadow .25s ease;
-}
-.skill-card:hover{
-  transform: translateY(-4px);
-  box-shadow: 0 14px 28px rgba(0,0,0,.12);
+  border-radius: 18px;
+  padding: 22px 22px 18px;
+  box-shadow: var(--tile-shadow);
 }
 .skill-card h5{
-  font-weight: 700;
-  margin-bottom: 18px;
+  font-weight:700;
+  margin-bottom:16px;
   color: var(--heading);
 }
 
-/* icons row */
-.skill-icons{
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 18px;
+/* Icon grid (רוחב, מסודר, נושם) */
+.icon-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(78px, 1fr));
+  gap: 16px 18px;
 }
-.skill-icons i{
-  font-size: 46px;       /* devicon size */
+
+/* Icon tile + tooltip */
+.icon-tile{
+  position: relative;
+  display: grid;
+  place-items: center;
+  height: 78px;
+  border-radius: 14px;
+  background: var(--tile-bg);
+  box-shadow: var(--tile-shadow);
+  transition: transform .18s ease, box-shadow .18s ease, filter .18s ease;
+}
+.icon-tile i{
+  font-size: 42px;     /* גודל האייקון */
   line-height: 1;
-  transition: transform .2s ease, filter .2s ease;
-  filter: saturate(1.05);
 }
-.skill-icons i:hover{
-  transform: scale(1.12) rotate(2deg);
-  filter: saturate(1.25);
+.icon-tile.emoji{
+  font-size: 30px;     /* אמוג'י */
 }
 
-/* badges row (for topics without icons) */
-.badge-row{
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+/* Tooltip */
+.icon-tile::after{
+  content: attr(data-label);
+  position: absolute;
+  bottom: -34px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #111;
+  color:#fff;
+  font-size: .78rem;
+  font-weight:600;
+  padding:6px 8px;
+  border-radius: 6px;
+  opacity:0;
+  pointer-events:none;
+  white-space: nowrap;
+  transition: opacity .18s ease, transform .18s ease;
 }
-.badge-chip{
-  background: var(--chip-bg);
-  color: var(--chip-text);
-  font-weight: 600;
-  padding: 8px 12px;
-  border-radius: 999px;
-  box-shadow: 0 2px 4px rgba(0,0,0,.04);
+.icon-tile:hover{
+  transform: translateY(-3px) scale(1.035);
+  box-shadow: var(--shadow-lg);
+  filter: saturate(1.15);
+}
+.icon-tile:hover::after{
+  opacity:1;
+  transform: translateX(-50%) translateY(-2px);
 }
 
-/* responsive columns */
+/* Responsive columns for cards */
 @media (min-width: 768px){
   .skill-card{ grid-column: span 6; }
 }
 @media (min-width: 1200px){
-  .skill-card{ grid-column: span 3; }
+  .skill-card{ grid-column: span 4; }
 }
 
-/* Smooth anchor scrolling */
-html { scroll-behavior: smooth; }
-section { scroll-margin-top: 84px; }
+/* Smooth scroll + offset לעוגנים */
+html{ scroll-behavior:smooth; }
+section{ scroll-margin-top: 88px; }
 
-/* ===== ABOUT SECTION IMPROVEMENTS ===== */
-#about .section-title{
-  font-size: clamp(28px, 4vw, 48px);
-  font-weight: 800;
-  letter-spacing: .2px;
-  margin-bottom: 18px;
-}
-
-#about p{
-  max-width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.85;
-  font-size: clamp(16px, 2vw, 20px);
-}
-
-#about p + p{ margin-top: 12px; }
-
-/* Social icons inside about – bigger */
-#about .social-icon{
-  width: 64px;
-  height: 64px;
-}
-#about .d-flex.gap-3{ gap: 22px !important; margin-top: 22px; }
-
-#about strong{ color: var(--heading); }
 
 
