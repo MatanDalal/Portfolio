@@ -1,163 +1,111 @@
-/* ===== Theme ===== */
+/* ===== Base ===== */
 :root{
-  --heading: #111;
-  --text: #333;
-  --muted: #6c757d;
-  --brand: #0d6efd;
-  --card-bg: #ffffff;
-  --chip-bg: #f4f6f8;
-  --chip-text: #222;
-  --shadow: 0 10px 24px rgba(0,0,0,.06);
+  --icon-size: 64px;        /* גודל אייקון */
+  --skill-gap: 18px;        /* רווח בין אייקונים */
+  --card-pad: 22px;         /* ריווח פנימי בכרטיס */
 }
 
-html, body { height: 100%; }
-body {
-  color: var(--text);
-  margin: 0;
-  background: #fff;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+html { scroll-behavior: smooth; }
+body { margin: 0; color:#222; }
 
 /* ===== Navbar ===== */
-.navbar-brand{ display:none !important; }          /* מסתיר את השם למעלה */
-.navbar .nav-link{
-  color:#222;
-  font-weight:500;
-  padding: .5rem .75rem;
+.main-nav .nav-link{
+  font-size: 1.125rem;             /* קצת יותר גדול */
+  padding: .5rem 1rem;
+  letter-spacing: .2px;
 }
-.navbar .nav-link:hover,
-.navbar .nav-link:focus{
-  color: var(--brand);
-  text-decoration: underline;
-}
+.main-nav{ gap: 28px; }            /* מרווח גדול יותר בין קישורים */
+.navbar,
+.navbar.bg-white{ background: #fff; }
 
-/* ===== Hero ===== */
-.hero{
-  min-height: 86vh;
-  padding-top: 88px;              /* מפצה על ה-navbar הקבוע */
-  background:#fff;
-}
-.hero-title{
-  font-size: clamp(36px, 6vw, 64px);
-  line-height: 1.12;
-  color: var(--heading);
-  margin: 0;
-}
-.hero-name{ color: var(--brand); }
-.tagline{
-  font-size: clamp(16px, 2.2vw, 22px);
-  color: var(--muted);
-}
-
-/* 👋 animation */
-.wave{
-  display:inline-block;
-  transform-origin:70% 70%;
-  animation: wave 2.5s ease-in-out infinite;
-}
-@keyframes wave{
-  0%{transform:rotate(0)} 10%{transform:rotate(14deg)}
-  20%{transform:rotate(-8deg)} 30%{transform:rotate(14deg)}
-  40%{transform:rotate(-4deg)} 50%{transform:rotate(10deg)}
-  60%,100%{transform:rotate(0)}
-}
-
-/* ===== Sections ===== */
+/* ===== Titles ===== */
 .section-title{
-  font-size: clamp(28px, 4vw, 40px);
-  color: var(--heading);
+  font-size: 44px;                 /* SKILLS / PROJECTS גדולות */
+  font-weight: 700;
+  letter-spacing: .5px;
 }
 
-/* ===== Social icons ===== */
-.social-row{ gap: 22px !important; }
+/* ===== Social icons in About ===== */
 .social-icon{
   display:inline-flex; align-items:center; justify-content:center;
-  width:64px; height:64px; border-radius:50%;
-  box-shadow: var(--shadow);
-  transition: transform .2s ease, box-shadow .2s ease;
+  width:56px; height:56px; border-radius:50%;
+  box-shadow:0 4px 10px rgba(0,0,0,.12);
+  transition:transform .2s ease, box-shadow .2s ease;
 }
-.social-icon img{ width:28px; height:28px; }
-.social-icon:hover{ transform: scale(1.08); box-shadow: 0 12px 26px rgba(0,0,0,.12); }
+.social-icon img{ width:26px; height:26px; }
+.social-icon:hover{
+  transform:scale(1.08);
+  box-shadow:0 8px 18px rgba(0,0,0,.18);
+}
 .social-icon.linkedin{ background:#0077b5; }
 .social-icon.github  { background:#24292e; }
 .social-icon.cv      { background:#e63946; }
 
-/* ===== Skills layout ===== */
-.skills-grid{
-  display:grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 24px;
-}
+/* ===== Skill cards ===== */
 .skill-card{
-  grid-column: span 12;
-  background: var(--card-bg);
-  border-radius: 16px;
-  padding: 22px 26px;
-  box-shadow: var(--shadow);
+  background:#fff;
+  border-radius:18px;
+  padding: var(--card-pad);
+  box-shadow:0 10px 30px rgba(0,0,0,.06);
 }
-.skill-card h5{
-  font-weight:700;
-  margin: 0 0 18px;
-  color: var(--heading);
-}
-
-.skill-icons{
-  display:flex; flex-wrap:wrap; gap: 20px 22px;
-}
-
-/* ===== Icon swap (icon -> label on hover) ===== */
-.icon-swap{
-  position: relative;
-  width: 76px; height: 76px;
-  display:inline-flex; align-items:center; justify-content:center;
-  border-radius: 14px;
-  background: var(--chip-bg);
-  transition: transform .15s ease;
-  cursor: default;
-}
-.icon-swap i{
-  font-size: 64px; line-height: 1;
-}
-.icon-swap img.color-icon{
-  width: 64px; height: 64px; object-fit: contain;
-}
-.icon-swap::after{
-  content: attr(data-label);
-  position: absolute;
-  inset: 0;
-  display:flex; align-items:center; justify-content:center;
+.skill-card .card-title{
+  font-size: 22px;
   font-weight: 700;
-  color: var(--chip-text);
-  opacity: 0;
-  transform: translateY(8px);
-  transition: opacity .15s ease, transform .15s ease;
-  padding: 0 6px;
-  text-align: center;
+  margin: 4px 0 18px;
 }
-.icon-swap:hover{
+
+/* Grid of skills */
+.skill-grid{
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: var(--skill-gap);
+}
+
+.skill{
+  position:relative;
+  border-radius:16px;
+  background:#f4f6f8;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  height:96px;
+  transition:transform .18s ease, box-shadow .18s ease, background .18s ease;
+  cursor:default;
+}
+.skill img{
+  width: var(--icon-size);
+  height: var(--icon-size);
+  transition:opacity .15s ease;
+}
+.skill:hover{
   transform: translateY(-2px);
-}
-.icon-swap:hover i,
-.icon-swap:hover img{
-  opacity: 0;
-  transform: scale(.9);
-}
-.icon-swap:hover::after{
-  opacity: 1;
-  transform: translateY(0);
+  box-shadow:0 10px 24px rgba(0,0,0,.08);
+  background:#ffffff;
 }
 
-/* ===== Card columns per breakpoint ===== */
-@media (min-width: 768px){
-  .skill-card{ grid-column: span 6; }
+/* Hover → switch icon to label */
+.skill::after{
+  content: attr(data-label);
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:700;
+  color:#111;
+  opacity:0;
+  transition:opacity .12s ease;
 }
-@media (min-width: 1200px){
-  .skill-card{ grid-column: span 3; }
-}
+.skill:hover img{ opacity:0; }
+.skill:hover::after{ opacity:1; }
 
-/* ===== Utilities ===== */
-.text-muted{ color: var(--muted) !important; }
-html { scroll-behavior: smooth; }
-section { scroll-margin-top: 80px; }
+/* Responsive */
+@media (max-width: 992px){
+  .skill-grid{ grid-template-columns: repeat(4, minmax(0,1fr)); }
+  .section-title{ font-size: 38px; }
+}
+@media (max-width: 576px){
+  .skill-grid{ grid-template-columns: repeat(3, minmax(0,1fr)); }
+  :root{ --icon-size: 54px; }
+}
 
