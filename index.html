@@ -11,12 +11,11 @@
   <!-- Devicon (tech logos) -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
 
-  <!-- Our CSS (+ cache bust) -->
-  <link rel="stylesheet" href="styles.css?v=7" />
+  <!-- Our CSS (cache-bust) -->
+  <link rel="stylesheet" href="styles.css?v=6" />
 </head>
 <body>
-
-  <!-- Navbar (בלי שם, כתב מעט גדול יותר + ריווח גדול יותר) -->
+  <!-- Navbar (בלי שם בצד, קישורים טיפה גדולים ומרווחים) -->
   <nav class="navbar navbar-expand-lg bg-white border-bottom fixed-top">
     <div class="container">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav"
@@ -25,7 +24,7 @@
       </button>
 
       <div id="nav" class="collapse navbar-collapse justify-content-center">
-        <ul class="navbar-nav main-nav">
+        <ul class="navbar-nav topnav">
           <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="#about">About Me</a></li>
           <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
@@ -83,46 +82,70 @@
     <h2 class="section-title text-center mb-5">Skills</h2>
 
     <div class="skills-grid">
-
       <!-- Languages & Technologies -->
       <article class="skill-card">
         <h5>Languages &amp; Technologies</h5>
-        <div class="icon-grid">
-          <span class="icon-tile" data-label="C"><i class="devicon-c-plain colored"></i></span>
-          <span class="icon-tile" data-label="C++"><i class="devicon-cplusplus-plain colored"></i></span>
-          <span class="icon-tile" data-label="C#"><i class="devicon-csharp-plain colored"></i></span>
-          <span class="icon-tile" data-label="Python"><i class="devicon-python-plain colored"></i></span>
-          <span class="icon-tile" data-label="HTML5"><i class="devicon-html5-plain colored"></i></span>
-          <span class="icon-tile" data-label="CSS3"><i class="devicon-css3-plain colored"></i></span>
-          <span class="icon-tile" data-label="JavaScript"><i class="devicon-javascript-plain colored"></i></span>
+        <div class="skill-icons">
+          <div class="skill-badge" data-label="C">
+            <i class="devicon-c-plain colored"></i><span class="label">C</span>
+          </div>
+          <div class="skill-badge" data-label="C++">
+            <i class="devicon-cplusplus-plain colored"></i><span class="label">C++</span>
+          </div>
+          <div class="skill-badge" data-label="C#">
+            <i class="devicon-csharp-plain colored"></i><span class="label">C#</span>
+          </div>
+          <div class="skill-badge" data-label="Python">
+            <i class="devicon-python-plain colored"></i><span class="label">Python</span>
+          </div>
+          <div class="skill-badge" data-label="HTML5">
+            <i class="devicon-html5-plain colored"></i><span class="label">HTML5</span>
+          </div>
+          <div class="skill-badge" data-label="CSS3">
+            <i class="devicon-css3-plain colored"></i><span class="label">CSS3</span>
+          </div>
+          <div class="skill-badge" data-label="JavaScript">
+            <i class="devicon-javascript-plain colored"></i><span class="label">JavaScript</span>
+          </div>
         </div>
       </article>
 
       <!-- Tools & Platforms -->
       <article class="skill-card">
         <h5>Tools &amp; Platforms</h5>
-        <div class="icon-grid">
-          <span class="icon-tile" data-label="Git"><i class="devicon-git-plain colored"></i></span>
-          <span class="icon-tile" data-label="GitHub"><i class="devicon-github-original"></i></span>
-          <span class="icon-tile" data-label="Linux"><i class="devicon-linux-plain"></i></span>
-          <span class="icon-tile" data-label="Bootstrap"><i class="devicon-bootstrap-plain colored"></i></span>
-          <span class="icon-tile" data-label="Node.js"><i class="devicon-nodejs-plain colored"></i></span>
-          <span class="icon-tile" data-label="VS Code"><i class="devicon-vscode-plain colored"></i></span>
+        <div class="skill-icons">
+          <div class="skill-badge" data-label="Git">
+            <i class="devicon-git-plain colored"></i><span class="label">Git</span>
+          </div>
+          <div class="skill-badge" data-label="GitHub">
+            <i class="devicon-github-original"></i><span class="label">GitHub</span>
+          </div>
+          <div class="skill-badge" data-label="Linux">
+            <i class="devicon-linux-plain"></i><span class="label">Linux</span>
+          </div>
+          <div class="skill-badge" data-label="Bootstrap">
+            <i class="devicon-bootstrap-plain colored"></i><span class="label">Bootstrap</span>
+          </div>
+          <div class="skill-badge" data-label="Node.js">
+            <i class="devicon-nodejs-plain colored"></i><span class="label">Node.js</span>
+          </div>
+          <div class="skill-badge" data-label="VS Code">
+            <i class="devicon-vscode-plain colored"></i><span class="label">VS Code</span>
+          </div>
         </div>
       </article>
 
-      <!-- Computer Science Foundations (טילי אמוג'י + Tooltip) -->
+      <!-- Computer Science Foundations (כאן השארתי תגים – אפשר להחליף בהמשך לאייקונים ייעודיים) -->
       <article class="skill-card">
         <h5>Computer Science Foundations</h5>
-        <div class="icon-grid">
-          <span class="icon-tile emoji" data-label="Data Structures">🧱</span>
-          <span class="icon-tile emoji" data-label="Algorithms">➿</span>
-          <span class="icon-tile emoji" data-label="HTTP">🔗</span>
-          <span class="icon-tile emoji" data-label="OOP">🧩</span>
-          <span class="icon-tile emoji" data-label="Networking Basics">🌐</span>
+        <div class="badge-row">
+          <span class="badge-chip">Data Structures</span>
+          <span class="badge-chip">Algorithms</span>
+          <span class="badge-chip">HTTP</span>
+          <span class="badge-chip">OOP</span>
+          <span class="badge-chip">Networking Basics</span>
         </div>
       </article>
-
     </div>
   </section>
 
@@ -149,6 +172,5 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
 
 
