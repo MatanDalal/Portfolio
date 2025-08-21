@@ -19,23 +19,14 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* ===== Navbar ===== */
+/* ===== NAVBAR ===== */
 .navbar .nav-link { 
-  color: var(--text);
-  font-size: 1.1rem;        /* טיפה גדול יותר */
-  padding: .5rem 0;
-  transition: color .2s ease;
+  color: var(--text); 
+  font-size: 1.15rem;   /* כתב טיפה יותר גדול */
+  margin: 0 12px;       /* יותר ריווח בין הלינקים */
+  font-weight: 500;
 }
 .navbar .nav-link:hover { color: var(--brand); }
-
-/* spacing בין הפריטים עצמם */
-.main-nav {
-  gap: 34px;
-}
-@media (max-width: 991.98px) {
-  .main-nav { gap: 16px; }
-  .navbar .nav-link { font-size: 1.05rem; }
-}
 
 /* Section titles */
 .section-title{
@@ -160,5 +151,32 @@ body {
 /* Smooth anchor scrolling */
 html { scroll-behavior: smooth; }
 section { scroll-margin-top: 84px; }
+
+/* ===== ABOUT SECTION IMPROVEMENTS ===== */
+#about .section-title{
+  font-size: clamp(28px, 4vw, 48px);
+  font-weight: 800;
+  letter-spacing: .2px;
+  margin-bottom: 18px;
+}
+
+#about p{
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.85;
+  font-size: clamp(16px, 2vw, 20px);
+}
+
+#about p + p{ margin-top: 12px; }
+
+/* Social icons inside about – bigger */
+#about .social-icon{
+  width: 64px;
+  height: 64px;
+}
+#about .d-flex.gap-3{ gap: 22px !important; margin-top: 22px; }
+
+#about strong{ color: var(--heading); }
 
 
