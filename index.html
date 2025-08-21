@@ -7,25 +7,20 @@
 
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Devicon (tech logos) -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
-  <!-- Bootstrap Icons (optional) -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-
-  <!-- Our CSS (cache-bust) -->
-  <link rel="stylesheet" href="styles.css?v=9" />
+  <!-- Our CSS -->
+  <link rel="stylesheet" href="styles.css?v=4" />
 </head>
+
 <body>
-  <!-- Navbar (שם מוסתר ב‑CSS) -->
-  <nav class="navbar navbar-expand-lg bg-white border-bottom fixed-top">
+  <!-- Navbar (centered, no left brand) -->
+  <nav class="navbar navbar-expand-lg fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="#hero">Matan Dalal</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav"
               aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div id="nav" class="collapse navbar-collapse justify-content-center">
-        <ul class="navbar-nav gap-3">
+        <ul class="navbar-nav main-nav">
           <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="#about">About Me</a></li>
           <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
@@ -36,44 +31,32 @@
     </div>
   </nav>
 
-  <!-- Hero -->
-  <section id="hero" class="hero d-flex flex-column justify-content-center align-items-center text-center">
-    <div class="container">
-      <h1 class="hero-title">
-        Hi, I’m <span class="hero-name">Matan Dalal</span> <span class="wave">👋</span>
-      </h1>
-      <p class="tagline mt-3">CS Student • Software Engineer • Problem Solver</p>
-      <a href="#about" class="btn btn-primary btn-lg mt-4">Learn More</a>
-    </div>
-  </section>
+  <!-- Hero just for anchor -->
+  <section id="hero" class="py-4"></section>
 
   <!-- About -->
   <section id="about" class="container py-5">
     <h2 class="section-title text-center mb-4">About Me</h2>
-
-    <p class="lead text-center mb-3">
+    <p class="lead text-center">
       I'm <strong>Matan Dalal</strong>, a third-year Computer Science student at HIT.
     </p>
-    <p class="text-center mb-3">
-      I've always been passionate about technology and love exploring new ideas.
-      I enjoy building projects, solving challenges, and learning new technologies.
+    <p class="text-center">
+      I've always been passionate about technology and love exploring new ideas. I enjoy building projects,
+      solving challenges, and learning new technologies.
     </p>
     <p class="text-center">
       Curious by nature, I strive to grow and discover something new every day.
     </p>
 
-    <!-- Social links (גדולים + מרווחים) -->
-    <div class="social-row d-flex justify-content-center gap-4 mt-4">
-      <a href="https://www.linkedin.com/in/matan-dalal-35829637a/" target="_blank"
-         class="social-icon linkedin" aria-label="LinkedIn">
+    <!-- Social links -->
+    <div class="d-flex justify-content-center gap-4 mt-4">
+      <a href="https://www.linkedin.com/in/matan-dalal-35829637a/" target="_blank" class="social-icon linkedin" aria-label="LinkedIn" title="LinkedIn">
         <img src="https://img.icons8.com/ios-glyphs/30/ffffff/linkedin.png" alt="LinkedIn">
       </a>
-      <a href="https://github.com/MatanDalal" target="_blank"
-         class="social-icon github" aria-label="GitHub">
+      <a href="https://github.com/MatanDalal" target="_blank" class="social-icon github" aria-label="GitHub" title="GitHub">
         <img src="https://img.icons8.com/ios-glyphs/30/ffffff/github.png" alt="GitHub">
       </a>
-      <a href="MATAN DALAL.pdf" target="_blank"
-         class="social-icon cv" aria-label="CV (PDF)">
+      <a href="MATAN DALAL.pdf" target="_blank" class="social-icon cv" aria-label="CV (PDF)" title="CV (PDF)">
         <img src="https://img.icons8.com/ios-filled/50/ffffff/open-resume.png" alt="CV">
       </a>
     </div>
@@ -83,70 +66,101 @@
   <section id="skills" class="container py-5">
     <h2 class="section-title text-center mb-5">Skills</h2>
 
-    <div class="skills-grid">
+    <div class="row g-4">
       <!-- Languages & Technologies -->
-      <article class="skill-card">
-        <h5>Languages &amp; Technologies</h5>
-        <div class="skill-icons">
-          <span class="icon-swap" data-label="C"><i class="devicon-c-plain colored"></i></span>
-          <span class="icon-swap" data-label="C++"><i class="devicon-cplusplus-plain colored"></i></span>
-          <span class="icon-swap" data-label="C#"><i class="devicon-csharp-plain colored"></i></span>
-          <span class="icon-swap" data-label="Python"><i class="devicon-python-plain colored"></i></span>
-          <span class="icon-swap" data-label="HTML5"><i class="devicon-html5-plain colored"></i></span>
-          <span class="icon-swap" data-label="CSS3"><i class="devicon-css3-plain colored"></i></span>
-          <span class="icon-swap" data-label="JavaScript"><i class="devicon-javascript-plain colored"></i></span>
+      <div class="col-12 col-lg-4">
+        <div class="skill-card">
+          <h3 class="card-title">Languages & Technologies</h3>
+          <div class="skill-grid">
+            <!-- C -->
+            <div class="skill" data-label="C" title="C">
+              <img src="https://img.icons8.com/color/96/c-programming.png" alt="C">
+            </div>
+            <!-- C++ -->
+            <div class="skill" data-label="C++" title="C++">
+              <img src="https://img.icons8.com/color/96/c-plus-plus-logo.png" alt="C++">
+            </div>
+            <!-- Python -->
+            <div class="skill" data-label="Python" title="Python">
+              <img src="https://img.icons8.com/color/96/python--v1.png" alt="Python">
+            </div>
+            <!-- HTML5 -->
+            <div class="skill" data-label="HTML5" title="HTML5">
+              <img src="https://img.icons8.com/color/96/html-5.png" alt="HTML5">
+            </div>
+            <!-- CSS3 -->
+            <div class="skill" data-label="CSS3" title="CSS3">
+              <img src="https://img.icons8.com/color/96/css3.png" alt="CSS3">
+            </div>
+            <!-- JavaScript -->
+            <div class="skill" data-label="JavaScript" title="JavaScript">
+              <img src="https://img.icons8.com/color/96/javascript--v1.png" alt="JavaScript">
+            </div>
+            <!-- C# -->
+            <div class="skill" data-label="C#" title="C#">
+              <img src="https://img.icons8.com/color/96/c-sharp-logo.png" alt="C#">
+            </div>
+          </div>
         </div>
-      </article>
+      </div>
 
       <!-- Tools & Platforms -->
-      <article class="skill-card">
-        <h5>Tools &amp; Platforms</h5>
-        <div class="skill-icons">
-          <span class="icon-swap" data-label="Git"><i class="devicon-git-plain colored"></i></span>
-          <span class="icon-swap" data-label="GitHub"><i class="devicon-github-original"></i></span>
-          <span class="icon-swap" data-label="Linux"><i class="devicon-linux-plain"></i></span>
-          <span class="icon-swap" data-label="Bootstrap"><i class="devicon-bootstrap-plain colored"></i></span>
-          <span class="icon-swap" data-label="Node.js"><i class="devicon-nodejs-plain colored"></i></span>
-          <span class="icon-swap" data-label="VS Code"><i class="devicon-vscode-plain colored"></i></span>
+      <div class="col-12 col-lg-4">
+        <div class="skill-card">
+          <h3 class="card-title">Tools & Platforms</h3>
+          <div class="skill-grid">
+            <div class="skill" data-label="Git" title="Git">
+              <img src="https://img.icons8.com/color/96/git.png" alt="Git">
+            </div>
+            <div class="skill" data-label="GitHub" title="GitHub">
+              <img src="https://img.icons8.com/ios-glyphs/96/github.png" alt="GitHub">
+            </div>
+            <div class="skill" data-label="Linux" title="Linux">
+              <img src="https://img.icons8.com/color/96/linux--v1.png" alt="Linux">
+            </div>
+            <div class="skill" data-label="Bootstrap" title="Bootstrap">
+              <img src="https://img.icons8.com/color/96/bootstrap.png" alt="Bootstrap">
+            </div>
+            <div class="skill" data-label="Node.js" title="Node.js">
+              <img src="https://img.icons8.com/fluency/96/node-js.png" alt="Node.js">
+            </div>
+            <div class="skill" data-label="VS Code" title="VS Code">
+              <img src="https://img.icons8.com/fluency/96/visual-studio-code-2019.png" alt="VS Code">
+            </div>
+          </div>
         </div>
-      </article>
+      </div>
 
-      <!-- Databases & Cloud -->
-      <article class="skill-card">
-        <h5>Databases &amp; Cloud</h5>
-        <div class="skill-icons">
-          <span class="icon-swap" data-label="MySQL"><i class="devicon-mysql-plain colored"></i></span>
-          <span class="icon-swap" data-label="PostgreSQL"><i class="devicon-postgresql-plain colored"></i></span>
-          <span class="icon-swap" data-label="Firebase"><i class="devicon-firebase-plain colored"></i></span>
-          <span class="icon-swap" data-label="Google Cloud"><i class="devicon-googlecloud-plain colored"></i></span>
+      <!-- Computer Science Foundations -->
+      <div class="col-12 col-lg-4">
+        <div class="skill-card">
+          <h3 class="card-title">Computer Science Foundations</h3>
+          <div class="skill-grid">
+            <div class="skill" data-label="Algorithms" title="Algorithms">
+              <img src="https://img.icons8.com/fluency/96/parse-from-clipboard.png" alt="Algorithms">
+            </div>
+            <div class="skill" data-label="Data Structures" title="Data Structures">
+              <img src="https://img.icons8.com/fluency/96/family-tree-1.png" alt="Data Structures">
+            </div>
+            <div class="skill" data-label="HTTP" title="HTTP">
+              <img src="https://img.icons8.com/color/96/http.png" alt="HTTP">
+            </div>
+            <div class="skill" data-label="OOP" title="OOP">
+              <img src="https://img.icons8.com/external-wanicon-flat-wanicon/96/external-oop-programming-wanicon-flat-wanicon.png" alt="OOP">
+            </div>
+            <div class="skill" data-label="Networking" title="Networking">
+              <img src="https://img.icons8.com/fluency/96/server.png" alt="Networking">
+            </div>
+          </div>
         </div>
-      </article>
-
-      <!-- Computer Science Foundations (צבעוני) -->
-      <article class="skill-card">
-        <h5>Computer Science Foundations</h5>
-        <div class="skill-icons">
-          <span class="icon-swap" data-label="Data Structures">
-            <img class="color-icon" src="https://img.icons8.com/color/96/mind-map.png" alt="Data Structures">
-          </span>
-          <span class="icon-swap" data-label="Algorithms">
-            <img class="color-icon" src="https://img.icons8.com/color/96/flow-chart.png" alt="Algorithms">
-          </span>
-          <span class="icon-swap" data-label="HTTP">
-            <img class="color-icon" src="https://img.icons8.com/color/96/http.png" alt="HTTP">
-          </span>
-          <span class="icon-swap" data-label="OOP">
-            <img class="color-icon" src="https://img.icons8.com/ios-filled/100/000000/curly-brackets.png" alt="OOP">
-          </span>
-        </div>
-      </article>
+      </div>
     </div>
   </section>
 
   <!-- Projects -->
   <section id="projects" class="container py-5">
-    <h2 class="section-title text-center mb-4">Projects</h2>
-    <p class="text-center text-muted">Here will go your projects...</p>
+    <h2 class="section-title text-center mb-5">Projects</h2>
+    <p class="text-center text-muted">Coming soon…</p>
   </section>
 
   <!-- Contact -->
@@ -158,7 +172,6 @@
     </ul>
   </section>
 
-  <!-- Footer -->
   <footer class="border-top py-3 bg-white">
     <div class="container text-muted small text-center">© 2025 Matan Dalal</div>
   </footer>
