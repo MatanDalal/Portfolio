@@ -1,24 +1,29 @@
-/* ==== רקע כללי + טקסט לבן ==== */
-html, body { 
-  height: 100%; 
-}
-
-body {
-  /* שכבת כהות עדינה + תמונת הרקע שלך (עם שבירת קאש v=2) */
-  background:
-    linear-gradient(rgba(0,0,0,.35), rgba(0,0,0,.35)),
-    url("images/background.jpg?v=2") center/cover fixed no-repeat;
-  color: #fff;     /* כל הטקסט לבן כברירת מחדל */
+/* ==== בסיס כללי ==== */
+html, body {
+  height: 100%;
   margin: 0;
+  background: #fff;       /* רקע לבן */
+  color: #000;            /* טקסט שחור */
+  font-family: Arial, sans-serif;
 }
 
-/* טקסט לבן לכולם, כולל "muted" */
-h1, h2, h3, h4, h5, h6,
-p, span, li, div { color: #fff !important; }
-.text-muted { color: rgba(255,255,255,.8) !important; }
+/* טקסטים */
+h1, h2, h3, h4, h5, h6 {
+  color: #000;
+  font-weight: 700;
+}
+p, span, li, div {
+  color: #000;
+}
+.text-muted {
+  color: #6c757d !important; /* אפור רגיל */
+}
 
-/* קישורים */
-a { color: #add8e6; text-decoration: none; }
+/* לינקים */
+a { 
+  color: #0d6efd; /* כחול Bootstrap */
+  text-decoration: none; 
+}
 a:hover { text-decoration: underline; }
 
 /* ===== Hero ===== */
@@ -27,12 +32,12 @@ a:hover { text-decoration: underline; }
   line-height: 1.1; 
 }
 .hero-name  { 
-  color: #e63946 !important; /* ורוד/אדום */
+  color: #0d6efd; /* כחול */
 }
-.tagline    { 
+.tagline { 
   font-size: clamp(16px, 2.4vw, 22px); 
   letter-spacing: .2px; 
-  color:#fff !important; 
+  color: #6c757d; /* אפור נעים */
 }
 
 /* אנימציה ל- 👋 */
@@ -51,28 +56,30 @@ a:hover { text-decoration: underline; }
   60%,100%{transform:rotate(0)}
 }
 
-/* גלילה חלקה + שלא יכנס מתחת ל-navbar כשקופצים לעוגנים */
+/* גלילה חלקה */
 html { scroll-behavior: smooth; }
 section { scroll-margin-top: 80px; }
 
-/* ===== Navbar שקוף + טקסט לבן ===== */
-.navbar,
-.navbar.bg-white,
-#hero {
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
+/* ===== Navbar ===== */
+.navbar {
+  background: #fff !important;  /* רקע לבן */
+  border-bottom: 1px solid #ddd;
 }
-.navbar .nav-link { color: #fff !important; }
-.navbar .nav-link:hover { color: #add8e6 !important; text-decoration: underline; }
+.navbar .nav-link { 
+  color: #000 !important; 
+}
+.navbar .nav-link:hover { 
+  color: #0d6efd !important; 
+  text-decoration: underline; 
+}
 
-/* אייקון המבורגר לבן */
-.navbar-toggler { border-color: rgba(255,255,255,.55); }
+/* אייקון המבורגר */
+.navbar-toggler { border-color: #ccc; }
 .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='white' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='black' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
-/* ===== כפתורים (שייראו טוב על רקע כהה) ===== */
+/* ===== כפתורים ===== */
 .btn-primary { 
   background-color:#0d6efd; 
   border-color:#0d6efd; 
@@ -87,8 +94,7 @@ section { scroll-margin-top: 80px; }
   display:inline-flex; 
   align-items:center; 
   justify-content:center;
-  width:50px; 
-  height:50px; 
+  width:50px; height:50px; 
   border-radius:50%;
   transition:transform .2s ease;
 }
@@ -98,3 +104,10 @@ section { scroll-margin-top: 80px; }
 .linkedin { background-color:#0077b5; }
 .github   { background-color:#24292e; }
 .cv       { background-color:#e63946; }
+
+/* ===== Footer ===== */
+footer {
+  background: #f8f9fa;
+  border-top: 1px solid #ddd;
+  color: #6c757d;
+}
