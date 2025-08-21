@@ -8,13 +8,18 @@
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Our CSS (עם שבירת קאש) -->
-  <link rel="stylesheet" href="styles.css?v=4" />
+  <!-- Devicon (icons for tech logos) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+
+  <!-- Our CSS (cache-bust) -->
+  <link rel="stylesheet" href="styles.css?v=5" />
 </head>
 <body>
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg fixed-top bg-light shadow-sm">
+  <nav class="navbar navbar-expand-lg bg-white border-bottom fixed-top">
     <div class="container">
+      <a class="navbar-brand fw-semibold" href="#hero">Matan Dalal</a>
+
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav"
               aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -33,53 +38,112 @@
   </nav>
 
   <!-- Hero -->
-  <section id="hero" class="d-flex flex-column justify-content-center align-items-center text-center" style="min-height:100vh;">
-    <h1 class="hero-title">
-      Hi, I’m <span class="hero-name">Matan Dalal</span> <span class="wave">👋</span>
-    </h1>
-    <p class="tagline mt-3">CS Student • Software Engineer • Problem Solver</p>
-    <a href="#about" class="btn btn-primary mt-4">Learn More</a>
+  <section id="hero" class="hero d-flex flex-column justify-content-center align-items-center text-center">
+    <div class="container">
+      <h1 class="hero-title">
+        Hi, I’m <span class="hero-name">Matan Dalal</span> <span class="wave">👋</span>
+      </h1>
+      <p class="tagline mt-3">CS Student • Software Engineer • Problem Solver</p>
+      <a href="#about" class="btn btn-primary btn-lg mt-4">Learn More</a>
+    </div>
   </section>
 
   <!-- About -->
   <section id="about" class="container py-5">
-    <h2 class="text-center fw-bold mb-4">About Me</h2>
+    <h2 class="section-title text-center mb-4">About Me</h2>
+    <p class="lead text-center mb-3">
+      I'm <strong>Matan Dalal</strong>, a third-year Computer Science student at HIT.
+    </p>
+    <p class="text-center mb-3">
+      I've always been passionate about technology and love exploring new ideas.
+      I enjoy building projects, solving challenges, and learning new technologies.
+    </p>
     <p class="text-center">
-      I'm <strong>Matan Dalal</strong>, a third-year Computer Science student at HIT.<br>
-      I've always been passionate about technology and love exploring new ideas.<br>
-      I enjoy building projects, solving challenges, and learning new technologies.<br>
       Curious by nature, I strive to grow and discover something new every day.
     </p>
 
     <!-- Social links -->
     <div class="d-flex justify-content-center gap-3 mt-4">
-      <a href="https://www.linkedin.com/in/matan-dalal-35829637a/" target="_blank" class="social-icon linkedin" aria-label="LinkedIn">
+      <a href="https://www.linkedin.com/in/matan-dalal-35829637a/" target="_blank"
+         class="social-icon linkedin" aria-label="LinkedIn">
         <img src="https://img.icons8.com/ios-glyphs/30/ffffff/linkedin.png" alt="LinkedIn">
       </a>
-      <a href="https://github.com/MatanDalal" target="_blank" class="social-icon github" aria-label="GitHub">
+      <a href="https://github.com/MatanDalal" target="_blank"
+         class="social-icon github" aria-label="GitHub">
         <img src="https://img.icons8.com/ios-glyphs/30/ffffff/github.png" alt="GitHub">
       </a>
-      <a href="MATAN DALAL.pdf" target="_blank" class="social-icon cv" aria-label="CV (PDF)">
+      <a href="MATAN DALAL.pdf" target="_blank"
+         class="social-icon cv" aria-label="CV (PDF)">
         <img src="https://img.icons8.com/ios-filled/50/ffffff/open-resume.png" alt="CV">
       </a>
     </div>
   </section>
 
-  <!-- Skills -->
+  <!-- Skills (NEW) -->
   <section id="skills" class="container py-5">
-    <h2 class="text-center fw-bold mb-4">Skills</h2>
-    <p class="text-center text-muted">Here will go your skills...</p>
+    <h2 class="section-title text-center mb-5">Skills</h2>
+
+    <div class="skills-grid">
+      <!-- 1: Languages & Technologies -->
+      <article class="skill-card">
+        <h5>Languages &amp; Technologies</h5>
+        <div class="skill-icons">
+          <i title="C" class="devicon-c-plain colored"></i>
+          <i title="C++" class="devicon-cplusplus-plain colored"></i>
+          <i title="Python" class="devicon-python-plain colored"></i>
+          <i title="HTML5" class="devicon-html5-plain colored"></i>
+          <i title="CSS3" class="devicon-css3-plain colored"></i>
+          <i title="JavaScript" class="devicon-javascript-plain colored"></i>
+        </div>
+      </article>
+
+      <!-- 2: Tools & Platforms -->
+      <article class="skill-card">
+        <h5>Tools &amp; Platforms</h5>
+        <div class="skill-icons">
+          <i title="Git" class="devicon-git-plain colored"></i>
+          <i title="GitHub" class="devicon-github-original"></i>
+          <i title="Linux" class="devicon-linux-plain"></i>
+          <i title="Bootstrap" class="devicon-bootstrap-plain colored"></i>
+          <i title="Node.js" class="devicon-nodejs-plain colored"></i>
+          <i title="VS Code" class="devicon-vscode-plain colored"></i>
+        </div>
+      </article>
+
+      <!-- 3: Databases & Cloud -->
+      <article class="skill-card">
+        <h5>Databases &amp; Cloud</h5>
+        <div class="skill-icons">
+          <i title="MySQL" class="devicon-mysql-plain colored"></i>
+          <i title="PostgreSQL" class="devicon-postgresql-plain colored"></i>
+          <i title="Firebase" class="devicon-firebase-plain colored"></i>
+          <i title="Google Cloud" class="devicon-googlecloud-plain colored"></i>
+        </div>
+      </article>
+
+      <!-- 4: Computer Science Foundations -->
+      <article class="skill-card">
+        <h5>Computer Science Foundations</h5>
+        <div class="badge-row">
+          <span class="badge-chip">Data Structures</span>
+          <span class="badge-chip">Algorithms</span>
+          <span class="badge-chip">HTTP</span>
+          <span class="badge-chip">OOP</span>
+          <span class="badge-chip">Networking Basics</span>
+        </div>
+      </article>
+    </div>
   </section>
 
   <!-- Projects -->
   <section id="projects" class="container py-5">
-    <h2 class="text-center fw-bold mb-4">Projects</h2>
+    <h2 class="section-title text-center mb-4">Projects</h2>
     <p class="text-center text-muted">Here will go your projects...</p>
   </section>
 
   <!-- Contact -->
   <section id="contact" class="container py-5">
-    <h2 class="text-center fw-bold mb-4">Contact</h2>
+    <h2 class="section-title text-center mb-4">Contact</h2>
     <ul class="list-unstyled text-center">
       <li>Email: <a href="mailto:matandalal41299@gmail.com">matandalal41299@gmail.com</a></li>
       <li>Phone: <a href="tel:+972542334434">+972542334434</a></li>
@@ -87,13 +151,9 @@
   </section>
 
   <!-- Footer -->
-  <footer class="py-3 bg-light">
-    <div class="container text-center">© 2025 Matan Dalal</div>
+  <footer class="border-top py-3 bg-white">
+    <div class="container text-muted small text-center">© 2025 Matan Dalal</div>
   </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
