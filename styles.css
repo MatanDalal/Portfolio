@@ -23,7 +23,6 @@ body {
 .navbar .nav-link { color: var(--text); }
 .navbar .nav-link:hover { color: var(--brand); }
 
-/* Section titles */
 .section-title{
   font-weight: 800;
   color: var(--heading);
@@ -109,30 +108,48 @@ body {
   align-items: center;
   gap: 18px;
 }
-.skill-icons i{
-  font-size: 46px;       /* devicon size */
+
+/* ===== Icon → Label swap on hover ===== */
+.icon-swap{
+  position: relative;
+  width: 60px;
+  height: 60px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.icon-swap i{
+  font-size: 46px;           /* devicon/bi size */
   line-height: 1;
-  transition: transform .2s ease, filter .2s ease;
+  transition: transform .2s ease, opacity .2s ease, filter .2s ease;
   filter: saturate(1.05);
 }
-.skill-icons i:hover{
-  transform: scale(1.12) rotate(2deg);
-  filter: saturate(1.25);
+.icon-swap:hover i{
+  opacity: 0;
+  transform: scale(.75);
 }
-
-/* badges row (for topics without icons) */
-.badge-row{
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-.badge-chip{
-  background: var(--chip-bg);
+/* the text label */
+.icon-swap::after{
+  content: attr(data-label);
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  opacity: 0;
+  transform: translateY(6px);
   color: var(--chip-text);
-  font-weight: 600;
-  padding: 8px 12px;
-  border-radius: 999px;
-  box-shadow: 0 2px 4px rgba(0,0,0,.04);
+  font-weight: 700;
+  font-size: 13px;
+  background: var(--chip-bg);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  padding: 6px 8px;
+  text-align: center;
+  line-height: 1.15;
+}
+.icon-swap:hover::after{
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* responsive columns */
