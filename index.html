@@ -8,23 +8,24 @@
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Devicon (icons for tech logos) -->
+  <!-- Devicon (tech logos) -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
 
-  <!-- Our CSS (cache-bust) -->
-  <link rel="stylesheet" href="styles.css?v=6" />
+  <!-- Our CSS (+ cache bust) -->
+  <link rel="stylesheet" href="styles.css?v=7" />
 </head>
 <body>
-  <!-- Navbar (no brand on the left; centered items; slightly larger & spaced links via CSS) -->
+
+  <!-- Navbar (בלי שם, כתב מעט גדול יותר + ריווח גדול יותר) -->
   <nav class="navbar navbar-expand-lg bg-white border-bottom fixed-top">
-    <div class="container justify-content-center">
+    <div class="container">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav"
               aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
       <div id="nav" class="collapse navbar-collapse justify-content-center">
-        <ul class="navbar-nav">
+        <ul class="navbar-nav main-nav">
           <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="#about">About Me</a></li>
           <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
@@ -82,44 +83,46 @@
     <h2 class="section-title text-center mb-5">Skills</h2>
 
     <div class="skills-grid">
-      <!-- 1: Languages & Technologies -->
+
+      <!-- Languages & Technologies -->
       <article class="skill-card">
         <h5>Languages &amp; Technologies</h5>
-        <div class="skill-icons">
-          <i title="C" class="devicon-c-plain colored"></i>
-          <i title="C++" class="devicon-cplusplus-plain colored"></i>
-          <i title="C#" class="devicon-csharp-plain colored"></i>
-          <i title="Python" class="devicon-python-plain colored"></i>
-          <i title="HTML5" class="devicon-html5-plain colored"></i>
-          <i title="CSS3" class="devicon-css3-plain colored"></i>
-          <i title="JavaScript" class="devicon-javascript-plain colored"></i>
+        <div class="icon-grid">
+          <span class="icon-tile" data-label="C"><i class="devicon-c-plain colored"></i></span>
+          <span class="icon-tile" data-label="C++"><i class="devicon-cplusplus-plain colored"></i></span>
+          <span class="icon-tile" data-label="C#"><i class="devicon-csharp-plain colored"></i></span>
+          <span class="icon-tile" data-label="Python"><i class="devicon-python-plain colored"></i></span>
+          <span class="icon-tile" data-label="HTML5"><i class="devicon-html5-plain colored"></i></span>
+          <span class="icon-tile" data-label="CSS3"><i class="devicon-css3-plain colored"></i></span>
+          <span class="icon-tile" data-label="JavaScript"><i class="devicon-javascript-plain colored"></i></span>
         </div>
       </article>
 
-      <!-- 2: Tools & Platforms -->
+      <!-- Tools & Platforms -->
       <article class="skill-card">
         <h5>Tools &amp; Platforms</h5>
-        <div class="skill-icons">
-          <i title="Git" class="devicon-git-plain colored"></i>
-          <i title="GitHub" class="devicon-github-original"></i>
-          <i title="Linux" class="devicon-linux-plain"></i>
-          <i title="Bootstrap" class="devicon-bootstrap-plain colored"></i>
-          <i title="Node.js" class="devicon-nodejs-plain colored"></i>
-          <i title="VS Code" class="devicon-vscode-plain colored"></i>
+        <div class="icon-grid">
+          <span class="icon-tile" data-label="Git"><i class="devicon-git-plain colored"></i></span>
+          <span class="icon-tile" data-label="GitHub"><i class="devicon-github-original"></i></span>
+          <span class="icon-tile" data-label="Linux"><i class="devicon-linux-plain"></i></span>
+          <span class="icon-tile" data-label="Bootstrap"><i class="devicon-bootstrap-plain colored"></i></span>
+          <span class="icon-tile" data-label="Node.js"><i class="devicon-nodejs-plain colored"></i></span>
+          <span class="icon-tile" data-label="VS Code"><i class="devicon-vscode-plain colored"></i></span>
         </div>
       </article>
 
-      <!-- 3: Computer Science Foundations -->
+      <!-- Computer Science Foundations (טילי אמוג'י + Tooltip) -->
       <article class="skill-card">
         <h5>Computer Science Foundations</h5>
-        <div class="badge-row">
-          <span class="badge-chip">Data Structures</span>
-          <span class="badge-chip">Algorithms</span>
-          <span class="badge-chip">HTTP</span>
-          <span class="badge-chip">OOP</span>
-          <span class="badge-chip">Networking Basics</span>
+        <div class="icon-grid">
+          <span class="icon-tile emoji" data-label="Data Structures">🧱</span>
+          <span class="icon-tile emoji" data-label="Algorithms">➿</span>
+          <span class="icon-tile emoji" data-label="HTTP">🔗</span>
+          <span class="icon-tile emoji" data-label="OOP">🧩</span>
+          <span class="icon-tile emoji" data-label="Networking Basics">🌐</span>
         </div>
       </article>
+
     </div>
   </section>
 
@@ -146,8 +149,6 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
-
 
 
 
